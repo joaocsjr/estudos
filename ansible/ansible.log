@@ -5484,3 +5484,5 @@ each: JSON: No JSON object could be decoded  Syntax Error while loading YAML.   
     "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.1.141 port 22: No route to host", 
     "unreachable": true
 }
+2021-03-01 14:49:26,640 p=7011 u=jcastro n=ansible |  [ERROR]: User interrupted execution
+

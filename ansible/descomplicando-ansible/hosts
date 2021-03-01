@@ -1,5 +1,5 @@
 [k8s-master]
-master.fsociety.lab ansible_ssh_host=192.168.1.200
+master.fsociety.lab ansible_ssh_host=192.168.1.122
 
 [k8s-workers]
 #worker1.fsociety.lab ansible_ssh_host=192.168.1.146
@@ -10,3 +10,6 @@ master.fsociety.lab ansible_ssh_host=192.168.1.200
 K8S_MASTER_NODE_IP=192.168.1.147
 K8S_API_SECURE_PORT=6443
 [all:vars]
+ansible_user = devops
+
+

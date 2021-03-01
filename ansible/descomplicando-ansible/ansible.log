@@ -9287,3 +9287,298 @@ value to ensure it does not change.
 2021-03-01 14:10:59,987 p=3559 u=jcastro n=ansible | master.fsociety.lab | FAILED! => {
     "msg": "to use the 'ssh' connection type with passwords, you must install the sshpass program"
 }
+2021-03-01 14:49:35,174 p=7026 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 14:49:49,349 p=7026 u=jcastro n=ansible | master.fsociety.lab | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.1.200 port 22: Host is down",
+    "unreachable": true
+}
+2021-03-01 14:50:42,714 p=7061 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 14:50:47,311 p=7061 u=jcastro n=ansible | master.fsociety.lab | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: jcastro@192.168.1.122: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).",
+    "unreachable": true
+}
+2021-03-01 14:50:53,286 p=7071 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 14:50:58,061 p=7071 u=jcastro n=ansible | master.fsociety.lab | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Invalid/incorrect username/password. Skipping remaining 3 retries to prevent account lockout: Permission denied, please try again.",
+    "unreachable": true
+}
+2021-03-01 14:51:24,166 p=7079 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 14:51:25,116 p=7079 u=jcastro n=ansible | master.fsociety.lab | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-03-01 14:51:33,816 p=7105 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 14:51:34,999 p=7105 u=jcastro n=ansible | master.fsociety.lab | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-03-01 14:58:46,227 p=7165 u=jcastro n=ansible |  [ERROR]: User interrupted execution
+
+2021-03-01 14:58:50,280 p=7173 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 14:58:55,157 p=7173 u=jcastro n=ansible | master.fsociety.lab | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: devops@192.168.1.122: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).",
+    "unreachable": true
+}
+2021-03-01 14:59:14,717 p=7195 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 14:59:19,588 p=7195 u=jcastro n=ansible | master.fsociety.lab | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: devops@192.168.1.122: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).",
+    "unreachable": true
+}
+2021-03-01 14:59:36,987 p=7211 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 14:59:41,655 p=7211 u=jcastro n=ansible | master.fsociety.lab | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: devops@192.168.1.122: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).",
+    "unreachable": true
+}
+2021-03-01 15:00:00,848 p=7220 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:00:02,909 p=7220 u=jcastro n=ansible | master.fsociety.lab | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-03-01 15:00:12,535 p=7254 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:00:13,551 p=7254 u=jcastro n=ansible | master.fsociety.lab | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-03-01 15:01:42,776 p=7296 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:01:45,046 p=7296 u=jcastro n=ansible | master.fsociety.lab | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Invalid/incorrect username/password. Skipping remaining 3 retries to prevent account lockout: Permission denied, please try again.",
+    "unreachable": true
+}
+2021-03-01 15:02:02,833 p=7314 u=jcastro n=ansible | ansible 2.10.6
+  config file = /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg
+  configured module search path = ['/usr/share/my_modules']
+  ansible python module location = /usr/local/Cellar/ansible/3.0.0/libexec/lib/python3.9/site-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 3.9.2 (default, Feb 24 2021, 13:26:09) [Clang 12.0.0 (clang-1200.0.32.29)]
+2021-03-01 15:02:02,833 p=7314 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:02:05,846 p=7314 u=jcastro n=ansible | host_list declined parsing /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/hosts as it did not pass its verify_file() method
+2021-03-01 15:02:05,852 p=7314 u=jcastro n=ansible | auto declined parsing /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/hosts as it did not pass its verify_file() method
+2021-03-01 15:02:05,855 p=7314 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:02:05,856 p=7314 u=jcastro n=ansible | Parsed /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/hosts inventory source with ini plugin
+2021-03-01 15:02:05,882 p=7314 u=jcastro n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2021-03-01 15:02:05,883 p=7314 u=jcastro n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2021-03-01 15:02:05,883 p=7314 u=jcastro n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2021-03-01 15:02:05,949 p=7314 u=jcastro n=ansible | META: ran handlers
+2021-03-01 15:02:06,001 p=7317 u=jcastro n=ansible | <192.168.1.122> ESTABLISH SSH CONNECTION FOR USER: None
+2021-03-01 15:02:06,007 p=7317 u=jcastro n=ansible | <192.168.1.122> SSH: EXEC sshpass -d53 ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=22 -o 'IdentityFile="/Users/jcastro/.ssh/id_rsa"' -o ConnectTimeout=10 -o ControlPath=/Users/jcastro/.ansible/cp/d173e6cdb8 192.168.1.122 '/bin/bash -c '"'"'echo ~ && sleep 0'"'"''
+2021-03-01 15:02:08,201 p=7317 u=jcastro n=ansible | <192.168.1.122> (5, b'', b'Permission denied, please try again.\r\n')
+2021-03-01 15:02:08,210 p=7314 u=jcastro n=ansible | master.fsociety.lab | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Invalid/incorrect username/password. Skipping remaining 3 retries to prevent account lockout: Permission denied, please try again.",
+    "unreachable": true
+}
+2021-03-01 15:03:27,277 p=7340 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:03:29,732 p=7340 u=jcastro n=ansible | master.fsociety.lab | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Invalid/incorrect username/password. Skipping remaining 3 retries to prevent account lockout: Permission denied, please try again.",
+    "unreachable": true
+}
+2021-03-01 15:03:45,280 p=7349 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:03:47,547 p=7349 u=jcastro n=ansible | master.fsociety.lab | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Invalid/incorrect username/password. Skipping remaining 3 retries to prevent account lockout: Permission denied, please try again.",
+    "unreachable": true
+}
+2021-03-01 15:07:03,307 p=7421 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:07:08,061 p=7421 u=jcastro n=ansible | master.fsociety.lab | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: jcastro@192.168.1.122: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).",
+    "unreachable": true
+}
+2021-03-01 15:07:14,647 p=7431 u=jcastro n=ansible |  [ERROR]: User interrupted execution
+
+2021-03-01 15:07:26,263 p=7433 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:07:31,167 p=7433 u=jcastro n=ansible |  [ERROR]: User interrupted execution
+
+2021-03-01 15:08:03,990 p=7439 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:08:05,478 p=7439 u=jcastro n=ansible |  [ERROR]: User interrupted execution
+
+2021-03-01 15:08:09,087 p=7440 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:08:09,103 p=7440 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:08:10,933 p=7440 u=jcastro n=ansible | master.fsociety.lab | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-03-01 15:08:20,254 p=7457 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:08:20,268 p=7457 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:08:21,328 p=7457 u=jcastro n=ansible | master.fsociety.lab | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-03-01 15:11:12,796 p=7505 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:11:12,805 p=7505 u=jcastro n=ansible | ERROR! failed at splitting arguments, either an unbalanced jinja2 block or quotes: dest=/etc/sudoers state=present line='devops ALL(ALL) NOPASSWD:ALL
+2021-03-01 15:11:21,473 p=7513 u=jcastro n=ansible | ansible 2.10.6
+  config file = /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg
+  configured module search path = ['/usr/share/my_modules']
+  ansible python module location = /usr/local/Cellar/ansible/3.0.0/libexec/lib/python3.9/site-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 3.9.2 (default, Feb 24 2021, 13:26:09) [Clang 12.0.0 (clang-1200.0.32.29)]
+2021-03-01 15:11:21,473 p=7513 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:11:24,536 p=7513 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:11:24,543 p=7513 u=jcastro n=ansible | ERROR! failed at splitting arguments, either an unbalanced jinja2 block or quotes: dest=/etc/sudoers state=present line='devops ALL(ALL) NOPASSWD:ALL
+2021-03-01 15:11:41,429 p=7523 u=jcastro n=ansible | ansible 2.10.6
+  config file = /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg
+  configured module search path = ['/usr/share/my_modules']
+  ansible python module location = /usr/local/Cellar/ansible/3.0.0/libexec/lib/python3.9/site-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 3.9.2 (default, Feb 24 2021, 13:26:09) [Clang 12.0.0 (clang-1200.0.32.29)]
+2021-03-01 15:11:41,429 p=7523 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:11:44,645 p=7523 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:11:44,670 p=7523 u=jcastro n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2021-03-01 15:11:44,671 p=7523 u=jcastro n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2021-03-01 15:11:44,671 p=7523 u=jcastro n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2021-03-01 15:11:44,741 p=7523 u=jcastro n=ansible | META: ran handlers
+2021-03-01 15:11:46,528 p=7523 u=jcastro n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: IOError: [Errno 13] Permission denied: '/etc/sudoers'
+2021-03-01 15:11:46,529 p=7523 u=jcastro n=ansible | master.fsociety.lab | FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "module_stderr": "Shared connection to 192.168.1.122 closed.\r\n",
+    "module_stdout": "Traceback (most recent call last):\r\n  File \"/home/devops/.ansible/tmp/ansible-tmp-1614622305.63818-7527-198775795360120/AnsiballZ_lineinfile.py\", line 102, in <module>\r\n    _ansiballz_main()\r\n  File \"/home/devops/.ansible/tmp/ansible-tmp-1614622305.63818-7527-198775795360120/AnsiballZ_lineinfile.py\", line 94, in _ansiballz_main\r\n    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)\r\n  File \"/home/devops/.ansible/tmp/ansible-tmp-1614622305.63818-7527-198775795360120/AnsiballZ_lineinfile.py\", line 40, in invoke_module\r\n    runpy.run_module(mod_name='ansible.modules.lineinfile', init_globals=None, run_name='__main__', alter_sys=True)\r\n  File \"/usr/lib64/python2.7/runpy.py\", line 176, in run_module\r\n    fname, loader, pkg_name)\r\n  File \"/usr/lib64/python2.7/runpy.py\", line 82, in _run_module_code\r\n    mod_name, mod_fname, mod_loader, pkg_name)\r\n  File \"/usr/lib64/python2.7/runpy.py\", line 72, in _run_code\r\n    exec code in run_globals\r\n  File \"/tmp/ansible_lineinfile_payload_yzTgFk/ansible_lineinfile_payload.zip/ansible/modules/lineinfile.py\", line 580, in <module>\r\n  File \"/tmp/ansible_lineinfile_payload_yzTgFk/ansible_lineinfile_payload.zip/ansible/modules/lineinfile.py\", line 571, in main\r\n  File \"/tmp/ansible_lineinfile_payload_yzTgFk/ansible_lineinfile_payload.zip/ansible/modules/lineinfile.py\", line 277, in present\r\nIOError: [Errno 13] Permission denied: '/etc/sudoers'\r\n",
+    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error",
+    "rc": 1
+}
+2021-03-01 15:11:54,603 p=7567 u=jcastro n=ansible | ansible 2.10.6
+  config file = /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg
+  configured module search path = ['/usr/share/my_modules']
+  ansible python module location = /usr/local/Cellar/ansible/3.0.0/libexec/lib/python3.9/site-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 3.9.2 (default, Feb 24 2021, 13:26:09) [Clang 12.0.0 (clang-1200.0.32.29)]
+2021-03-01 15:11:54,603 p=7567 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:11:57,328 p=7567 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:11:57,354 p=7567 u=jcastro n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2021-03-01 15:11:57,354 p=7567 u=jcastro n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2021-03-01 15:11:57,354 p=7567 u=jcastro n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2021-03-01 15:11:57,420 p=7567 u=jcastro n=ansible | META: ran handlers
+2021-03-01 15:11:58,098 p=7572 u=jcastro n=ansible | <192.168.1.122> ssh_retry: attempt: 1, caught exception(Missing sudo password) from cmd ([b'sshpass', b'-d53', b'ssh', b'-C', b'-o', b'ControlMaster=auto', b'-o', b'ControlPersist=60s', b'-o', b'StrictHostKeyChecking=no', b'-o', b'Port=22', b'-o', b'IdentityFile="/Users/jcastro/.ssh/id_rsa"', b'-o', b'User="devops"', b'-o', b'ConnectTimeout=10', b'-o', b'ControlPath=/Users/jcastro/.ansible/cp/2e88b0d17d', b'-tt', b'192.168.1.122', b'/bin/bash -c \'sudo -H -S -n  -u root /bin/bash -c \'"\'"\'echo BECOME-SUCCESS-jdagmgccgluztrmybpqzyniftmvzizmt ; /usr/bin/python /home/devops/.ansible/tmp/ansible-tmp-1614622317.523803-7572-224904688787350/AnsiballZ_lineinfile.py\'"\'"\' && sleep 0\'']...), pausing for 0 seconds
+2021-03-01 15:11:58,184 p=7572 u=jcastro n=ansible | <192.168.1.122> ssh_retry: attempt: 2, caught exception(Missing sudo password) from cmd ([b'sshpass', b'-d53', b'ssh', b'-C', b'-o', b'ControlMaster=auto', b'-o', b'ControlPersist=60s', b'-o', b'StrictHostKeyChecking=no', b'-o', b'Port=22', b'-o', b'IdentityFile="/Users/jcastro/.ssh/id_rsa"', b'-o', b'User="devops"', b'-o', b'ConnectTimeout=10', b'-o', b'ControlPath=/Users/jcastro/.ansible/cp/2e88b0d17d', b'-tt', b'192.168.1.122', b'/bin/bash -c \'sudo -H -S -n  -u root /bin/bash -c \'"\'"\'echo BECOME-SUCCESS-jdagmgccgluztrmybpqzyniftmvzizmt ; /usr/bin/python /home/devops/.ansible/tmp/ansible-tmp-1614622317.523803-7572-224904688787350/AnsiballZ_lineinfile.py\'"\'"\' && sleep 0\'']...), pausing for 1 seconds
+2021-03-01 15:11:59,294 p=7572 u=jcastro n=ansible | <192.168.1.122> ssh_retry: attempt: 3, caught exception(Missing sudo password) from cmd ([b'sshpass', b'-d53', b'ssh', b'-C', b'-o', b'ControlMaster=auto', b'-o', b'ControlPersist=60s', b'-o', b'StrictHostKeyChecking=no', b'-o', b'Port=22', b'-o', b'IdentityFile="/Users/jcastro/.ssh/id_rsa"', b'-o', b'User="devops"', b'-o', b'ConnectTimeout=10', b'-o', b'ControlPath=/Users/jcastro/.ansible/cp/2e88b0d17d', b'-tt', b'192.168.1.122', b'/bin/bash -c \'sudo -H -S -n  -u root /bin/bash -c \'"\'"\'echo BECOME-SUCCESS-jdagmgccgluztrmybpqzyniftmvzizmt ; /usr/bin/python /home/devops/.ansible/tmp/ansible-tmp-1614622317.523803-7572-224904688787350/AnsiballZ_lineinfile.py\'"\'"\' && sleep 0\'']...), pausing for 3 seconds
+2021-03-01 15:12:02,456 p=7567 u=jcastro n=ansible | master.fsociety.lab | FAILED! => {
+    "msg": "Missing sudo password"
+}
+2021-03-01 15:12:22,223 p=7608 u=jcastro n=ansible | ansible 2.10.6
+  config file = /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg
+  configured module search path = ['/usr/share/my_modules']
+  ansible python module location = /usr/local/Cellar/ansible/3.0.0/libexec/lib/python3.9/site-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 3.9.2 (default, Feb 24 2021, 13:26:09) [Clang 12.0.0 (clang-1200.0.32.29)]
+2021-03-01 15:12:22,223 p=7608 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:12:22,238 p=7608 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:12:22,264 p=7608 u=jcastro n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2021-03-01 15:12:22,264 p=7608 u=jcastro n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2021-03-01 15:12:22,264 p=7608 u=jcastro n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2021-03-01 15:12:22,331 p=7608 u=jcastro n=ansible | META: ran handlers
+2021-03-01 15:12:23,043 p=7611 u=jcastro n=ansible | <192.168.1.122> ssh_retry: attempt: 1, caught exception(Missing sudo password) from cmd ([b'ssh', b'-C', b'-o', b'ControlMaster=auto', b'-o', b'ControlPersist=60s', b'-o', b'StrictHostKeyChecking=no', b'-o', b'Port=22', b'-o', b'IdentityFile="/Users/jcastro/.ssh/id_rsa"', b'-o', b'KbdInteractiveAuthentication=no', b'-o', b'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', b'-o', b'PasswordAuthentication=no', b'-o', b'User="devops"', b'-o', b'ConnectTimeout=10', b'-o', b'ControlPath=/Users/jcastro/.ansible/cp/2e88b0d17d', b'-tt', b'192.168.1.122', b'/bin/bash -c \'sudo -H -S -n  -u root /bin/bash -c \'"\'"\'echo BECOME-SUCCESS-vyxihgxiatbrrfvodidxmdsfhcgyhwrp ; /usr/bin/python /home/devops/.ansible/tmp/ansible-tmp-1614622342.427456-7611-85582172639024/AnsiballZ_lineinfile.py\'"\'"\' && sleep 0\'']...), pausing for 0 seconds
+2021-03-01 15:12:23,127 p=7611 u=jcastro n=ansible | <192.168.1.122> ssh_retry: attempt: 2, caught exception(Missing sudo password) from cmd ([b'ssh', b'-C', b'-o', b'ControlMaster=auto', b'-o', b'ControlPersist=60s', b'-o', b'StrictHostKeyChecking=no', b'-o', b'Port=22', b'-o', b'IdentityFile="/Users/jcastro/.ssh/id_rsa"', b'-o', b'KbdInteractiveAuthentication=no', b'-o', b'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', b'-o', b'PasswordAuthentication=no', b'-o', b'User="devops"', b'-o', b'ConnectTimeout=10', b'-o', b'ControlPath=/Users/jcastro/.ansible/cp/2e88b0d17d', b'-tt', b'192.168.1.122', b'/bin/bash -c \'sudo -H -S -n  -u root /bin/bash -c \'"\'"\'echo BECOME-SUCCESS-vyxihgxiatbrrfvodidxmdsfhcgyhwrp ; /usr/bin/python /home/devops/.ansible/tmp/ansible-tmp-1614622342.427456-7611-85582172639024/AnsiballZ_lineinfile.py\'"\'"\' && sleep 0\'']...), pausing for 1 seconds
+2021-03-01 15:12:24,218 p=7611 u=jcastro n=ansible | <192.168.1.122> ssh_retry: attempt: 3, caught exception(Missing sudo password) from cmd ([b'ssh', b'-C', b'-o', b'ControlMaster=auto', b'-o', b'ControlPersist=60s', b'-o', b'StrictHostKeyChecking=no', b'-o', b'Port=22', b'-o', b'IdentityFile="/Users/jcastro/.ssh/id_rsa"', b'-o', b'KbdInteractiveAuthentication=no', b'-o', b'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', b'-o', b'PasswordAuthentication=no', b'-o', b'User="devops"', b'-o', b'ConnectTimeout=10', b'-o', b'ControlPath=/Users/jcastro/.ansible/cp/2e88b0d17d', b'-tt', b'192.168.1.122', b'/bin/bash -c \'sudo -H -S -n  -u root /bin/bash -c \'"\'"\'echo BECOME-SUCCESS-vyxihgxiatbrrfvodidxmdsfhcgyhwrp ; /usr/bin/python /home/devops/.ansible/tmp/ansible-tmp-1614622342.427456-7611-85582172639024/AnsiballZ_lineinfile.py\'"\'"\' && sleep 0\'']...), pausing for 3 seconds
+2021-03-01 15:12:27,380 p=7608 u=jcastro n=ansible | master.fsociety.lab | FAILED! => {
+    "msg": "Missing sudo password"
+}
+2021-03-01 15:12:33,487 p=7631 u=jcastro n=ansible | ansible 2.10.6
+  config file = /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg
+  configured module search path = ['/usr/share/my_modules']
+  ansible python module location = /usr/local/Cellar/ansible/3.0.0/libexec/lib/python3.9/site-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 3.9.2 (default, Feb 24 2021, 13:26:09) [Clang 12.0.0 (clang-1200.0.32.29)]
+2021-03-01 15:12:33,488 p=7631 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:12:36,404 p=7631 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:12:36,431 p=7631 u=jcastro n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2021-03-01 15:12:36,431 p=7631 u=jcastro n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2021-03-01 15:12:36,431 p=7631 u=jcastro n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2021-03-01 15:12:36,495 p=7631 u=jcastro n=ansible | META: ran handlers
+2021-03-01 15:12:37,187 p=7634 u=jcastro n=ansible | <192.168.1.122> ssh_retry: attempt: 1, caught exception(Missing sudo password) from cmd ([b'sshpass', b'-d53', b'ssh', b'-C', b'-o', b'ControlMaster=auto', b'-o', b'ControlPersist=60s', b'-o', b'StrictHostKeyChecking=no', b'-o', b'Port=22', b'-o', b'IdentityFile="/Users/jcastro/.ssh/id_rsa"', b'-o', b'User="devops"', b'-o', b'ConnectTimeout=10', b'-o', b'ControlPath=/Users/jcastro/.ansible/cp/2e88b0d17d', b'-tt', b'192.168.1.122', b'/bin/bash -c \'sudo -H -S -n  -u root /bin/bash -c \'"\'"\'echo BECOME-SUCCESS-wijwrrakygkfzvwgcuqnlkdkvbnzsddb ; /usr/bin/python /home/devops/.ansible/tmp/ansible-tmp-1614622356.6015658-7634-94077705630249/AnsiballZ_lineinfile.py\'"\'"\' && sleep 0\'']...), pausing for 0 seconds
+2021-03-01 15:12:37,296 p=7634 u=jcastro n=ansible | <192.168.1.122> ssh_retry: attempt: 2, caught exception(Missing sudo password) from cmd ([b'sshpass', b'-d53', b'ssh', b'-C', b'-o', b'ControlMaster=auto', b'-o', b'ControlPersist=60s', b'-o', b'StrictHostKeyChecking=no', b'-o', b'Port=22', b'-o', b'IdentityFile="/Users/jcastro/.ssh/id_rsa"', b'-o', b'User="devops"', b'-o', b'ConnectTimeout=10', b'-o', b'ControlPath=/Users/jcastro/.ansible/cp/2e88b0d17d', b'-tt', b'192.168.1.122', b'/bin/bash -c \'sudo -H -S -n  -u root /bin/bash -c \'"\'"\'echo BECOME-SUCCESS-wijwrrakygkfzvwgcuqnlkdkvbnzsddb ; /usr/bin/python /home/devops/.ansible/tmp/ansible-tmp-1614622356.6015658-7634-94077705630249/AnsiballZ_lineinfile.py\'"\'"\' && sleep 0\'']...), pausing for 1 seconds
+2021-03-01 15:12:38,394 p=7634 u=jcastro n=ansible | <192.168.1.122> ssh_retry: attempt: 3, caught exception(Missing sudo password) from cmd ([b'sshpass', b'-d53', b'ssh', b'-C', b'-o', b'ControlMaster=auto', b'-o', b'ControlPersist=60s', b'-o', b'StrictHostKeyChecking=no', b'-o', b'Port=22', b'-o', b'IdentityFile="/Users/jcastro/.ssh/id_rsa"', b'-o', b'User="devops"', b'-o', b'ConnectTimeout=10', b'-o', b'ControlPath=/Users/jcastro/.ansible/cp/2e88b0d17d', b'-tt', b'192.168.1.122', b'/bin/bash -c \'sudo -H -S -n  -u root /bin/bash -c \'"\'"\'echo BECOME-SUCCESS-wijwrrakygkfzvwgcuqnlkdkvbnzsddb ; /usr/bin/python /home/devops/.ansible/tmp/ansible-tmp-1614622356.6015658-7634-94077705630249/AnsiballZ_lineinfile.py\'"\'"\' && sleep 0\'']...), pausing for 3 seconds
+2021-03-01 15:12:41,579 p=7631 u=jcastro n=ansible | master.fsociety.lab | FAILED! => {
+    "msg": "Missing sudo password"
+}
+2021-03-01 15:14:14,817 p=7670 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:14:16,685 p=7670 u=jcastro n=ansible | master.fsociety.lab | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-03-01 15:14:21,552 p=7694 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:14:21,568 p=7694 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:14:22,585 p=7694 u=jcastro n=ansible | master.fsociety.lab | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-03-01 15:14:25,836 p=7714 u=jcastro n=ansible | ansible 2.10.6
+  config file = /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg
+  configured module search path = ['/usr/share/my_modules']
+  ansible python module location = /usr/local/Cellar/ansible/3.0.0/libexec/lib/python3.9/site-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 3.9.2 (default, Feb 24 2021, 13:26:09) [Clang 12.0.0 (clang-1200.0.32.29)]
+2021-03-01 15:14:25,837 p=7714 u=jcastro n=ansible | Using /Users/jcastro/Documents/estudos/estudos/ansible/descomplicando-ansible/ansible.cfg as config file
+2021-03-01 15:14:25,852 p=7714 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 15:14:25,877 p=7714 u=jcastro n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2021-03-01 15:14:25,877 p=7714 u=jcastro n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2021-03-01 15:14:25,878 p=7714 u=jcastro n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2021-03-01 15:14:25,940 p=7714 u=jcastro n=ansible | META: ran handlers
+2021-03-01 15:14:26,897 p=7714 u=jcastro n=ansible | master.fsociety.lab | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-03-01 15:14:26,903 p=7714 u=jcastro n=ansible | META: ran handlers
+2021-03-01 15:14:26,906 p=7714 u=jcastro n=ansible | META: ran handlers
