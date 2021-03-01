@@ -1,9 +1,9 @@
 *.log
 key
-pdf
+*.pdf
 id_rsa
 .DS_Store
 teste
 .vagrant
-
+.DS_Store
 
