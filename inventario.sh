@@ -1,0 +1,1 @@
+/Users/jcastro/ansible_inventory/inventario.sh

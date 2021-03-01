@@ -1,0 +1,34 @@
+vms = {
+
+  'node01' => {'memory' => '1024', 'cpus' => 2},
+  'node02'=> {'memory' => '1024', 'cpus' => 2},
+  'node03'=> {'memory' => '1024', 'cpus' => 2}
+}
+
+Vagrant.configure('2') do |config|
+  
+  config.vm.box = 'oraclelinux/7'
+  config.vm.box_check_update = false
+  
+  vms.each do |name, conf|
+    config.vm.define "#{name}" do |k|
+     
+     
+      #k.vm.provision "shell", inline: $script 
+      k.vm.hostname = "#{name}.fsociety.int"
+      k.vm.provider 'virtualbox' do |vb|
+	
+        vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+        vb.memory = conf['memory']
+        vb.cpus = conf['cpus']
+      end
+
+
+    end
+  end
+end
+
+
+
+
+

@@ -1,0 +1,2 @@
+192.168.200.12 host2.fsociety.lab host2
+192.168.200.11 host1.fsociety.lab host1

@@ -1,0 +1,70 @@
+### validado 21/12/2020
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.ssh.insert_key = false
+
+  # host1
+  config.vm.define "host1" do |host1|
+    host1.vm.hostname = "host1.fsociety.lab"
+    host1.vm.box = "oraclelinux/7"
+    host1.vm.network "private_network", ip: "192.168.200.11"
+
+    host1.vm.provider "virtualbox" do |v|
+        v.customize [ "modifyvm", :id, "--cpus", "2" ]
+        v.customize [ "modifyvm", :id, "--memory", "1204" ]
+     
+      #sync do dns
+      host1.vm.provision :hosts, :sync_hosts => true
+
+  end 
+
+  end
+  # End host1
+
+  # host2
+  config.vm.define "host2" do |host2|
+    host2.vm.hostname = "host2.fsociety.lab"
+    host2.vm.box = "oraclelinux/7"
+    host2.vm.network "private_network", ip: "192.168.200.12"
+
+    host2.vm.provider "virtualbox" do |v|
+        v.customize [ "modifyvm", :id, "--cpus", "2" ]
+        v.customize [ "modifyvm", :id, "--memory", "1204" ]
+
+      #sync do dns
+      host2.vm.provision :hosts, :sync_hosts => true
+    end
+
+    
+    
+
+  end
+  # End host2
+
+
+  # host3
+  config.vm.define "host3" do |host3|
+    host3.vm.hostname = "host3.fsociety.lab"
+    host3.vm.box = "oraclelinux/7"
+    host3.vm.network "private_network", ip: "192.168.200.13"
+    host3.vm.provider "virtualbox" do |v|
+        v.customize [ "modifyvm", :id, "--cpus", "2" ]
+        v.customize [ "modifyvm", :id, "--memory", "1204" ]
+        #sync do dns
+        host3.vm.provision :hosts, :sync_hosts => true
+    end
+
+  end
+  # End host3
+end
+
+  
+
+
+
+
+

@@ -1,0 +1,115 @@
+
+- name: instalando dependencias - CentOS
+  yum:
+    name: ['yum-utils', 'device-mapper-persistent-data', 'lvm2']
+    state: present
+    update_cache: true
+   
+- name: criando a pasta docker no systemd
+  file:
+    path: /etc/systemd/system/docker.service.d
+    state: directory
+    mode: 0755
+
+    
+- name: add repo docker - CentOS
+  shell:
+    yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  tags: docker
+
+- name: instalando docker - CentOS
+  yum:
+    name: docker-ce
+    state: present
+    update_cache: true  
+
+  
+- name: adicionando os parametros de confiugração do docker daemon - CentOS
+  blockinfile:
+    dest: /etc/docker/daemon.json
+    marker: ''
+    create: yes
+    block: |
+      {
+        "exec-opts": ["native.cgroupdriver=systemd"],
+        "log-driver": "json-file",
+        "log-opts": {
+          "max-size": "100m"
+        },
+        "storage-driver": "overlay2",
+        "storage-opts": [
+          "overlay2.override_kernel_check=true"
+        ]
+      }
+  tags: docker
+
+- name: disabilita SELinux - CentOS
+  command: setenforce 0
+- name: disabilita SELinux on reboot - CentOS
+  selinux:
+    state: disabled
+- name: add repositorio YUM Kubernetes - CentOS
+  yum_repository:
+   name: Kubernetes
+   description: Kubernetes YUM repository
+   baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+   gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+   gpgcheck: yes
+- name: criando a pasta docker no systemd
+  file:
+    path: /etc/systemd/system/docker.service.d
+    state: directory
+    mode: 0755
+- name: desativando swap
+  shell:
+    swapoff -a
+
+- name: Desativando swap no fstab
+  replace:
+    path: /etc/fstab
+    regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
+    replace: '# \1' 
+
+
+- name: start Docker
+  systemd:
+    state: started
+    daemon_reload: yes
+    name: docker
+    enabled: yes
+- name: garantindo que net.bridge.bridge-nf-call-ip6tables esteja setada como 1
+  sysctl:
+   name: net.bridge.bridge-nf-call-ip6tables
+   value: 1
+   state: present
+  
+- name: grantindo net.bridge.bridge-nf-call-iptables esteja setada como 1
+  sysctl:
+   name: net.bridge.bridge-nf-call-iptables
+   value: 1
+   state: present
+
+- name: instalando kubelet kubeadm kubectl
+  yum: 
+   name: ['kubelet', 'kubeadm', 'kubectl']
+   state: present
+   update_cache: true   
+
+- name: start kubelet
+  systemd:
+   name: kubelet
+   enabled: yes
+   state: started
+
+#- name: start kubectl
+#  systemd:
+#   name: kubectl
+#   enabled: yes
+#   state: started
+
+
+- name: adicionando autocompletation
+  shell:
+    echo "source <(kubectl completion bash)" >> ~/.bashrc
+
+
