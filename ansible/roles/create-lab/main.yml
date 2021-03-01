@@ -1,0 +1,5 @@
+- hosts: all
+  become: yes 
+  user: devops
+  roles:
+  - { role: create-lab, tags: ["create-lab"] }
