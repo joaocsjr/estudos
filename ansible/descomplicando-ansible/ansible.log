@@ -9282,3 +9282,8 @@ value to ensure it does not change.
 }
 2021-02-20 22:56:31,123 p=11016 u=devops n=ansible |  [ERROR]: User interrupted execution
 
+2021-03-01 14:10:59,581 p=3559 u=jcastro n=ansible | [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2021-03-01 14:10:59,987 p=3559 u=jcastro n=ansible | master.fsociety.lab | FAILED! => {
+    "msg": "to use the 'ssh' connection type with passwords, you must install the sshpass program"
+}
