@@ -6,4 +6,5 @@ id_rsa
 teste
 .vagrant
 .DS_Store
-
+*.txt
+*.old
