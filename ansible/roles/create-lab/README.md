@@ -1,7 +1,7 @@
-Role Name
+Create lab 
 =========
 
-A brief description of the role goes here.
+Role para configurar o lab
 
 Requirements
 ------------

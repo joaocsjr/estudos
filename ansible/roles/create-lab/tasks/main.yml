@@ -1,2 +1,3 @@
 ---
 # tasks file for create-lab
+- include: install.yml
