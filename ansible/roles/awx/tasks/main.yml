@@ -1,0 +1,4 @@
+---
+# tasks file for awx
+
+- import_tasks: pre-req.yml

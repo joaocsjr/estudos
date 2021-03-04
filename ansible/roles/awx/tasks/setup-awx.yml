@@ -1,0 +1,7 @@
+- hosts: all
+  become: yes
+  user: devosp
+  gather_facts: no
+  roles:
+  - { role: install-awx, tags: ["install_awx"]}
+    

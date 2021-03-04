@@ -1,0 +1,56 @@
+- name: Instalando o Docker
+  shell: curl -fsSL https://get.docker.com | bash
+
+- name: instalando pacotes - CentOS
+  yum:
+    name: ['yum-utils', 'device-mapper-persistent-data', 'lvm2', 'ansible', 'git', 'python-devel', 'python-pip', 'python-docker-py', 'vim-enhanced','nmp']
+    state: present
+    update_cache: true
+
+
+#
+#- name: Install "NPM" node.js package globally.
+#  npm:
+#    name: npm
+#    global: yes
+#
+- name: Install Compose
+  pip:
+    executable: pip3
+    name: 
+        - docker-compose==1.9.0
+    
+- name: Clonando o REPO
+  git:
+    repo: "{{ git_repo }}"
+    dest: /tmp/awx
+    force: yes
+- name: Create file
+  file:
+    path: /tmp/awx/installer/inventoryng
+    state: touch
+
+- name: Insert/Update inventoryng
+  blockinfile:
+    path: /tmp/awx/installer/inventoryng
+    block: |
+      #Gerado Via Ansible
+      localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python3"
+      [all:vars]
+      dockerhub_base=ansible
+      awx_task_hostname=awx
+      awx_web_hostname=awxweb
+      postgres_data_dir="/files/aws/pgdocker"
+      host_port=80
+      host_port_ssl=443
+      docker_compose_dir="/files/aws/awxcompose"
+      pg_username=awx
+      pg_password=awxpass
+      pg_database=awx
+      pg_port=5432
+      pg_admin_password=5fe2e032ffc8c
+      admin_user=admin
+      admin_password=password
+      create_preload_data=True
+      secret_key=5fe2e032ffc8c1e13ed3dc3dfd52fdfaab09a9a35631f59cd7390ae7d181fd98
+      project_data_dir=/files/awx/projects
