@@ -1,25 +1,24 @@
-#- name: Instalando o Docker
-#  shell: curl -fsSL https://get.docker.com | bash
+- name: install requisitos
+  shell: yum install python3 python3-pip python3-devel '@Development Tools' git -y
 
-#- name: instalando pacotes - CentOS
-#  yum:
-#    name: ['yum-utils', 'device-mapper-persistent-data', 'lvm2', 'ansible', 'git', 'python-devel', 'python-pip', 'python-docker-py', 'vim-enhanced']
-#    state: present
-#    update_cache: true
+- name: instalando docker
+  shell: curl sSL https://get.docker.com | sh
 
+- name: update pip
+  shell:  pip3 install pip --upgrade
 
-#
-#- name: Install "NPM" node.js package globally.
-#  npm:
-#    name: npm
-#    global: yes
-#
-- name: Install Compose
-  pip:
-    executable: pip3
-    name: 
-        - docker-compose==1.9.0
-    
+- name: Instala o módulo docker-py.
+  shell: pip3 install docker
+
+- name: Instala o módulo docker-compose.
+  shell: pip3 install docker-compose
+
+- name: Habilita o docker na inicialização.
+  shell:  systemctl enable docker
+
+- name: instalando ansible 
+  shell: pip install ansible
+
 - name: Clonando o REPO
   git:
     repo: "{{ git_repo }}"

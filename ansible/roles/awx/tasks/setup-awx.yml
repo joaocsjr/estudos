@@ -1,7 +1,3 @@
-- hosts: all
-  become: yes
-  user: devosp
-  gather_facts: no
-  roles:
-  - { role: install-awx, tags: ["install_awx"]}
-    
+- name: Install awx
+  shell: ansible-playbook -i /tmp/awx/installer/inventoryng /tmp/awx/installer/install.yml
+   
