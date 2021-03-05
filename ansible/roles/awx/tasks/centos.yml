@@ -1,5 +1,5 @@
 - name: install requisitos
-  shell: yum install  yum-utils python3 python3-pip python3-devel '@Development Tools' git -y
+  shell: yum install  yum-utils python3 python3-pip python3-devel '@Development Tools' git libselinux-python3 -y
 
    
 - name: criando a pasta docker no systemd
@@ -48,11 +48,6 @@
 - name: disabilita SELinux on reboot - CentOS
   selinux:
     state: disabled
-
-
-
-
-
 - name: update pip
   shell:  pip3 install pip --upgrade
 
@@ -62,46 +57,56 @@
 - name: Instala o módulo docker-compose.
   shell: pip3 install docker-compose
 
+
+- name: start o docker
+  shell:  systemctl start docker
+
 - name: Habilita o docker na inicialização.
   shell:  systemctl enable docker
 
-
-- name: Clonando o REPO
-  git:
-    repo: "{{ git_repo }}"
-    dest: /tmp/awx
-    force: yes
-
-- name : create directory 
-  shell: mkdir -p  /tmp/awx/installer
+- name:  configurando user no docker 
+  shell:  sudo usermod -aG docker $USER
 
 
-- name: Create file
-  file:
-    path: /tmp/awx/installer/inventoryng
-    state: touch
 
-- name: Insert/Update inventoryng
-  blockinfile:
-    path: /tmp/awx/installer/inventoryng
-    block: |
-      #Gerado Via Ansible
-      localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python3"
-      [all:vars]
-      dockerhub_base=ansible
-      awx_task_hostname=awx
-      awx_web_hostname=awxweb
-      postgres_data_dir="/files/aws/pgdocker"
-      host_port=80
-      host_port_ssl=443
-      docker_compose_dir="/files/aws/awxcompose"
-      pg_username=awx
-      pg_password=awxpass
-      pg_database=awx
-      pg_port=5432
-      pg_admin_password=5fe2e032ffc8c
-      admin_user=admin
-      admin_password=password
-      create_preload_data=True
-      secret_key=5fe2e032ffc8c1e13ed3dc3dfd52fdfaab09a9a35631f59cd7390ae7d181fd98
-      project_data_dir=/files/awx/projects
+
+
+#- name: Clonando o REPO
+#  git:
+#    repo: "{{ git_repo }}"
+#    dest: /tmp/awx
+#    force: yes
+#
+#- name : create directory 
+#  shell: mkdir -p  /tmp/awx/installer
+#
+#
+#- name: Create file
+#  file:
+#    path: /tmp/awx/installer/inventoryng
+#    state: touch
+#
+#- name: Insert/Update inventoryng
+#  blockinfile:
+#    path: /tmp/awx/installer/inventoryng
+#    block: |
+#      #Gerado Via Ansible
+#      localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python3"
+#      [all:vars]
+#      dockerhub_base=ansible
+#      awx_task_hostname=awx
+#      awx_web_hostname=awxweb
+#      postgres_data_dir="/files/aws/pgdocker"
+#      host_port=80
+#      host_port_ssl=443
+#      docker_compose_dir="/files/aws/awxcompose"
+#      pg_username=awx
+#      pg_password=awxpass
+#      pg_database=awx
+#      pg_port=5432
+#      pg_admin_password=5fe2e032ffc8c
+#      admin_user=admin
+#      admin_password=password
+#      create_preload_data=True
+#      secret_key=5fe2e032ffc8c1e13ed3dc3dfd52fdfaab09a9a35631f59cd7390ae7d181fd98
+#      project_data_dir=/files/awx/projects
