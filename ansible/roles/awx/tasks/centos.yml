@@ -71,6 +71,11 @@
     repo: "{{ git_repo }}"
     dest: /tmp/awx
     force: yes
+
+- name : create directory 
+  shell: mkdir -p  /tmp/awx/installer
+
+
 - name: Create file
   file:
     path: /tmp/awx/installer/inventoryng
