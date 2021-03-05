@@ -1,8 +1,57 @@
 - name: install requisitos
-  shell: yum install python3 python3-pip python3-devel '@Development Tools' git -y
+  shell: yum install  yum-utils python3 python3-pip python3-devel '@Development Tools' git -y
 
-- name: instalando docker
-  shell: curl sSL https://get.docker.com | sh
+   
+- name: criando a pasta docker no systemd
+  file:
+    path: /etc/systemd/system/docker.service.d
+    state: directory
+    mode: 0755
+
+    
+- name: add repo docker - CentOS
+  shell:
+    yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  tags: docker
+
+- name: instalando docker - CentOS
+  yum:
+    name: docker-ce
+    state: present
+    update_cache: true  
+
+
+
+
+  
+- name: adicionando os parametros de confiugração do docker daemon - CentOS
+  blockinfile:
+    dest: /etc/docker/daemon.json
+    marker: ''
+    create: yes
+    block: |
+      {
+        "exec-opts": ["native.cgroupdriver=systemd"],
+        "log-driver": "json-file",
+        "log-opts": {
+          "max-size": "100m"
+        },
+        "storage-driver": "overlay2",
+        "storage-opts": [
+          "overlay2.override_kernel_check=true"
+        ]
+      }
+  tags: docker
+
+- name: disabilita SELinux - CentOS
+  command: setenforce 0
+- name: disabilita SELinux on reboot - CentOS
+  selinux:
+    state: disabled
+
+
+
+
 
 - name: update pip
   shell:  pip3 install pip --upgrade
@@ -16,8 +65,6 @@
 - name: Habilita o docker na inicialização.
   shell:  systemctl enable docker
 
-- name: instalando ansible 
-  shell: pip install ansible
 
 - name: Clonando o REPO
   git:
