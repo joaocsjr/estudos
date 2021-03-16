@@ -1,5 +1,5 @@
 - name: install requisitos
-  shell: yum install  yum-utils python3 python3-pip python3-devel '@Development Tools' git libselinux-python3 -y
+  shell: yum install  yum-utils python3 python3-pip python3-devel '@Development Tools' git libselinux-python3 docker-compose -y
 
    
 - name: criando a pasta docker no systemd
@@ -43,9 +43,10 @@
       }
   tags: docker
 
-- name: disabilita SELinux - CentOS
+- name: desabilita SELinux - CentOS
   command: setenforce 0
-- name: disabilita SELinux on reboot - CentOS
+
+- name: desabilita SELinux on reboot - CentOS
   selinux:
     state: disabled
 - name: update pip
@@ -57,6 +58,8 @@
 - name: Instala o módulo docker-compose.
   shell: pip3 install docker-compose
 
+- name: disable fW
+  shell:  systemctl stop firewalld && systemctl disable firewalld
 
 - name: start o docker
   shell:  systemctl start docker
