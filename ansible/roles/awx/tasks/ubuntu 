@@ -1,0 +1,21 @@
+ 
+ curl -fsSL https://get.docker.com | bash
+   apt intall
+   apt install curl -y
+   curl -fsSL https://get.docker.com | bash
+   docker ps
+   apt install python-pip
+   pip  install docker-compose==1.9.0 docker-py
+   ls
+   ls --la
+   ps ax
+   apt install npm nodejs -y
+   npm install npm --global
+   less /home/devops/npm-debug.log
+   npm install npm --global
+   poweroff
+   apt install python3 python3-pip
+   pip3 install docker docker-compose
+   cd  awx/
+   cd installer/
+   ansible-playbook -i inventory install.yml
