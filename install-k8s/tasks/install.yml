@@ -1,5 +1,5 @@
 - name: instalando o docker
-  shell: curl -fsSL https://get.docker.com | bash 
+  shell: apt install curl -y && curl -fsSL https://get.docker.com | bash 
 
 - name: Adicionando as chaves do repo 
   apt_key:
