@@ -30,6 +30,14 @@
     - kubelet
     - kubeadm
     - kubectl
+
+
+- name: start kubelet
+  systemd:
+   name: kubelet
+   enabled: yes
+   state: started
+    
 - name: adicionando autocompletation
   shell:
     echo "source <(kubectl completion bash)" >> ~/.bashrc
