@@ -1,6 +1,12 @@
 - name: instalando o docker
   shell: apt install curl -y && curl -fsSL https://get.docker.com | bash 
 
+- name: disable ufw
+  systemd:
+   name: ufw
+   enabled: no
+   state: stopped
+
 - name: Adicionando as chaves do repo 
   apt_key:
     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
