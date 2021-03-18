@@ -6,6 +6,17 @@
     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
     state: present
 
+
+- name: desativando swap
+  shell:
+    swapoff -a
+
+- name: Desativando swap no fstab
+  replace:
+    path: /etc/fstab
+    regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
+    replace: '# \1' 
+
 - name: Adicionando o repo do k8s
   apt_repository:
     repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
