@@ -1,2 +1,3 @@
 ---
-# handlers file for install-k8s
+- name: restart docker
+  service: "name=docker state={{ docker_restart_handler_state }}"
