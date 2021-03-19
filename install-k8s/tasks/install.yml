@@ -11,7 +11,7 @@
 
 - name: docker com suporte
   apt:
-    name: docker-ce
+    name: docker
     state: present
 
 - name: disable ufw
