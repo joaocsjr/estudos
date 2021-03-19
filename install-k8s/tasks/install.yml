@@ -15,7 +15,6 @@
     state: present
     enabled: yes
 
-
 - name: start Docker
   systemd:
     state: started
