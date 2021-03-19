@@ -38,3 +38,44 @@
     state: present
     update_cache: true
 
+
+- name: Adicionando as chaves do repo 
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+
+- name: desativando swap
+  shell:
+    swapoff -a
+
+- name: Desativando swap no fstab
+  replace:
+    path: /etc/fstab
+    regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
+    replace: '# \1' 
+
+- name: Adicionando o repo do k8s
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+
+- name: Instalando os pacotes kubeadm, kubelet e kubectl
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - kubelet
+    - kubeadm
+    - kubectl
+
+
+- name: start kubelet
+  systemd:
+   name: kubelet
+   enabled: yes
+   state: started
+    
+- name: adicionando autocompletation
+  shell:
+    echo "source <(kubectl completion bash)" >> ~/.bashrc
