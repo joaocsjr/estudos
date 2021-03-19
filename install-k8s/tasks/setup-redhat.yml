@@ -1,4 +1,3 @@
----
 - name: Ensure old versions of Docker are not installed.
   package:
     name:
