@@ -8,9 +8,11 @@
     "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-- name: instalando docker versao especifica
-  shell: apt install docker-ce=18.03.1  -y 
-    
+
+- name: docker com suporte
+  apt:
+    name: docker-ce=18
+    state: present
 
 - name: disable ufw
   systemd:
