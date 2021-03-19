@@ -13,6 +13,17 @@
   apt:
     name: docker.io
     state: present
+    enabled: yes
+
+
+- name: start Docker
+  systemd:
+    state: started
+    daemon_reload: yes
+    name: docker
+    enabled: yes
+
+
 
 - name: disable ufw
   systemd:
