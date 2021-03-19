@@ -85,17 +85,6 @@
     regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
     replace: '# \1' 
 
-- name: garantindo que net.bridge.bridge-nf-call-ip6tables esteja setada como 1
-  sysctl:
-   name: net.bridge.bridge-nf-call-ip6tables
-   value: 1
-   state: present
-  
-- name: grantindo net.bridge.bridge-nf-call-iptables esteja setada como 1
-  sysctl:
-   name: net.bridge.bridge-nf-call-iptables
-   value: 1
-   state: present
 
 - name: instalando kubelet kubeadm kubectl
   yum: 
