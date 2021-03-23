@@ -14,6 +14,7 @@
   with_items:
     - "{{ groups['all'] }}"
 
+
 - name: install needed network manager libs
   yum: name={{ item }} state=installed
   with_items:
@@ -27,4 +28,3 @@
   shell: host {{ ansible_fqdn }} | awk '{print $NF}' ; test ${PIPESTATUS[0]} -eq 0 
   register: host_sh
 - debug: msg="{{ host_sh.stdout }}"
-
