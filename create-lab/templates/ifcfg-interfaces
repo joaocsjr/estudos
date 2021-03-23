@@ -1,0 +1,14 @@
+# configured via ansible
+BOOTPROTO="static"
+DEVICE="eth0"
+ONBOOT=yes
+TYPE=Ethernet
+IPADDR="{{ host_sh.stdout }}"
+NETMASK="{{ ansible_default_ipv4.netmask }}" 
+GATEWAY="{{ ansible_default_ipv4.gateway }}" 
+DEFROUTE=yes
+PEERDNS=no
+PEERROUTES=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+NAME="eth0"

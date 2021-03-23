@@ -1,12 +1,12 @@
 [all]
 
 [manager]
-awx	ansible_ssh_host=10.0.0.77
+awx	ansible_ssh_host=10.0.0.19
 [k8s-master]
 k8s-mr1  ansible_ssh_host=10.0.0.86
 [k8s-workers]
-k8s-wr1  ansible_ssh_host=10.0.0.37
-k8s-wr2  ansible_ssh_host=10.0.0.47
+#k8s-wr1  ansible_ssh_host=10.0.0.37
+#k8s-wr2  ansible_ssh_host=10.0.0.47
 
 
 [k8s-workers:vars]

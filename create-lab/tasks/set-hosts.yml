@@ -1,3 +1,4 @@
+
 - name: Alterando hostname para o padrao do arquivo hosts
   hostname:
     name="{{ inventory_hostname }}"
@@ -15,16 +16,19 @@
     - "{{ groups['all'] }}"
 
 
-- name: install needed network manager libs
-  yum: name={{ item }} state=installed
-  with_items:
-  - NetworkManager-glib
-  - libnm-qt-devel.x86_64
-  - nm-connection-editor.x86_64
-  - libsemanage-python
-  - policycoreutils-python
 
 - name: Get the host IP
   shell: host {{ ansible_fqdn }} | awk '{print $NF}' ; test ${PIPESTATUS[0]} -eq 0 
   register: host_sh
 - debug: msg="{{ host_sh.stdout }}"
+
+
+- name: Setup networking (interfaces)
+  template: owner=root group=root mode=644
+              src=ifcfg-interfaces
+              dest=/etc/sysconfig/network-scripts/ifcfg-{{ item }}
+  with_items: "{{ net_interfaces }}"
+ 
+   
+- name: Restart Network
+  service: name=network state=restarted

@@ -1,2 +1,4 @@
 ---
 # vars file for create-lab
+net_interfaces: [ 'eth0' ]
+
