@@ -22,7 +22,7 @@
   - libnm-qt-devel.x86_64
   - nm-connection-editor.x86_64
   - libsemanage-python
-  -  policycoreutils-python
+  - policycoreutils-python
 
 - name: Get the host IP
   shell: host {{ ansible_fqdn }} | awk '{print $NF}' ; test ${PIPESTATUS[0]} -eq 0 
