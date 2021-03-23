@@ -35,4 +35,5 @@
  
    
 - name: Restart Network
-  service: name=network state=restarted
+  shell: systemctl restart network-online.target
+  
