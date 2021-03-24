@@ -15,7 +15,7 @@
   with_items:
     - "{{ groups['all'] }}"
 
-- name: install bind-utils
+- name: instalando bind-utils
   yum: name=bind-utils state=installed
 
 
@@ -27,7 +27,7 @@
 #- debug: msg="{{ host_sh.stdout }}"
 
 
-- name: Setup networking (interfaces)
+- name: configurando interface com ip estatico
   template: owner=root group=root mode=644
               src=ifcfg-interfaces
               dest=/etc/sysconfig/network-scripts/ifcfg-{{ item }}

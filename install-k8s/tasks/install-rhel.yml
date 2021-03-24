@@ -1,3 +1,14 @@
+- name: Ensure old versions of Docker are not installed.
+  package:
+    name:
+      - docker
+      - docker-common
+      - docker-engine
+    state: absent
+
+
+
+
 
 - name: instalando dependencias - CentOS
   yum:
