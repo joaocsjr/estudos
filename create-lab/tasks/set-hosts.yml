@@ -21,10 +21,10 @@
 
 
 
-- name: Get the host IP
-  shell: host {{ ansible_fqdn }} | awk '{print $NF}' ; test ${PIPESTATUS[0]} -eq 0 
-  register: host_sh
-- debug: msg="{{ host_sh.stdout }}"
+#- name: Get the host IP
+#  shell: host {{ ansible_fqdn }} | awk '{print $NF}' ; test ${PIPESTATUS[0]} -eq 0 
+#  register: host_sh
+#- debug: msg="{{ host_sh.stdout }}"
 
 
 - name: Setup networking (interfaces)
