@@ -78,7 +78,7 @@
 - name: Desativando swap no fstab
   replace:
     path: /etc/fstab
-    regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
+    regexp: '^([^#].*?\swap\s+sw\s+.*)$'
     replace: '# \1' 
 
 
