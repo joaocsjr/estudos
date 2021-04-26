@@ -1,2 +1,11 @@
 ---
 # defaults file for create-cluster
+kubernetes_pod_network:
+  # Flannel CNI.
+  #cni: 'flannel'
+  #cidr: '10.244.0.0/16'
+  # Calico CNI.
+  cni: 'calico'
+  cidr: '192.200.0.0/16'
+# Calico config files
+kubernetes_calico_manifest_file: https://docs.projectcalico.org/v3.10/manifests/calico.yaml

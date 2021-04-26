@@ -69,12 +69,21 @@
     - kubeadm
     - kubectl
 
+- name: marcando packages para nao serem atualizados
+  shell:
+    sudo apt-mark hold kubelet kubeadm kubectl containerd
+
 
 - name: start kubelet
   systemd:
    name: kubelet
    enabled: yes
    state: started
+
+
+- name:  ajustando autocompletation
+  shell:
+    source /etc/bash_completion |  source <(kubectl completion bash)
     
 - name: adicionando autocompletation
   shell:

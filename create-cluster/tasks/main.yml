@@ -1,3 +1,10 @@
 ---
 # tasks file for create-cluster
+
 - include: init-cluster.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: init-cluster-calico.yml
+  when: ansible_os_family == 'Debian'
+
+

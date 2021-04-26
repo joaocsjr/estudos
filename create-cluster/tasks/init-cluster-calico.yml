@@ -5,7 +5,7 @@
 
 - name: Inicializando o cluster k8s
   command:
-    kubeadm init
+    kubeadm init 
   register: kubeadm_init
 
 - name: Criando o diretorio .kube
@@ -19,9 +19,15 @@
     dest: ~/.kube/config
     state: link
 
-- name: Configurando o pod network Weavenet
-  shell: kubectl apply -f {{ default_url_weavenet }}
-  register: weavenet_result
+- name: Configure Calico networking.
+  command: "{{ item }}"
+  with_items:
+    - kubectl apply -f {{ kubernetes_calico_manifest_file }}
+  register: calico_result
+  changed_when: "'created' in calico_result.stdout"
+  when: kubernetes_pod_network.cni == 'calico'
+
+
 
 - name: Pegando o token para adicionar os workers no cluster
   shell: kubeadm token list | cut -d ' ' -f1  | sed -n '2p'
