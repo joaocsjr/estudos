@@ -39,10 +39,10 @@
           "overlay2.override_kernel_check=true"
         ]
       }
-- name: disabilita SELinux - CentOS
+- name: desabilita SELinux - CentOS
   command: setenforce 0
   tags: docker
-- name: disabilita SELinux on reboot - CentOS
+- name: desabilita SELinux on reboot - CentOS
   selinux:
     state: disabled
   tags: docker

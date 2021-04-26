@@ -54,9 +54,9 @@
       }
   tags: docker
 
-- name: disabilita SELinux - CentOS
+- name: desabilita SELinux - CentOS
   command: setenforce 0
-- name: disabilita SELinux on reboot - CentOS
+- name: desabilita SELinux on reboot - CentOS
   selinux:
     state: disabled
 - name: add repositorio YUM Kubernetes - CentOS

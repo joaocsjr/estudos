@@ -1,0 +1,130 @@
+- name: Ensure old versions of Docker are not installed.
+  apt:
+    name:
+      - docker
+      - docker-engine
+    state: absent
+
+- name: Ensure dependencies are installed.
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - gnupg2
+    state: present
+
+- name: desativando swap
+  shell:
+    swapoff -a
+
+- name: Desativando swap no fstab
+  replace:
+    path: /etc/fstab
+    regexp: '^([^#].*?\swap\s+sw\s+.*)$'
+    replace: '# \1' 
+
+- name: add modulo overlay para o containerd
+  modprobe:
+    name: overlay
+    state: present
+
+- name: add modulo br_netfilter
+  modprobe:
+    name: br_netfilter
+    state: present
+
+
+- name: garantindo que net.bridge.bridge-nf-call-ip6tables esteja setada como 1
+  sysctl:
+   name: net.bridge.bridge-nf-call-ip6tables
+   value: 1
+   state: present
+  
+- name: grantindo net.bridge.bridge-nf-call-iptables esteja setada como 1
+  sysctl:
+   name: net.bridge.bridge-nf-call-iptables
+   value: 1
+   state: present
+
+  
+- name: grantindo net.ipv4.ip_forward esteja setada como 1
+  sysctl:
+   name: net.ipv4.ip_forward   
+   value: 1
+   state: present
+
+
+- name: configurando sysctl sem boot
+  shell:
+    sysctl --system
+
+- name: instalando containerd 
+  apt:
+    name: containerd
+    state: present
+    update_cache: yes
+
+
+- name: Ensure containerd is started and enabled at boot.
+  service:
+    name: containerd
+    state: "{{ containerd_service_state }}"
+    enabled: "{{ containerd_service_enabled }}"
+
+- name: Ensure containerd config directory exists.
+  file:
+    path: /etc/containerd
+    state: directory
+  register: containerd_dir
+
+- name: Get defaults from containerd.
+  command: containerd config default
+  changed_when: false
+  register: containerd_config_default
+  when: containerd_config_default_write
+
+- name: Write defaults to config.toml.
+  copy:
+    dest: /etc/containerd/config.toml
+    content: "{{ containerd_config_default.stdout }}"
+  notify: restart containerd
+  when: containerd_config_default_write
+
+
+- name: disable ufw
+  systemd:
+   name: ufw
+   enabled: no
+   state: stopped
+
+- name: Adicionando as chaves do repo 
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Adicionando o repo do k8s
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+
+- name: Instalando os pacotes kubeadm, kubelet e kubectl
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - kubelet=1.20.1-00
+    - kubeadm=1.20.1-00
+    - kubectl=1.20.1-00
+
+
+
+- name: start kubelet
+  systemd:
+   name: kubelet
+   enabled: yes
+   state: started
+    
+- name: adicionando autocompletation
+  shell:
+    echo "source <(kubectl completion bash)" >> ~/.bashrc
+
