@@ -88,6 +88,9 @@
     daemon_reload: yes
     name: docker
     enabled: yes
+
+
+    
 - name: garantindo que net.bridge.bridge-nf-call-ip6tables esteja setada como 1
   sysctl:
    name: net.bridge.bridge-nf-call-ip6tables
