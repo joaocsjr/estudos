@@ -1,0 +1,20 @@
+---
+vm_location: "/var/lib/libvirt/images"
+root_pass: "password"
+
+guests:
+  vm01:
+    hostname: vm01
+    mem: 2048
+    cpus: 1
+    os_type: rhel8.0
+    file_type: qcow2
+  vm02:
+    hostname: vm02
+    mem: 2048
+    cpus: 1
+    os_type: rhel8.0
+    file_type: qcow2
+
+Source_VM_Name: 'centos8'
+New_VM_Location: '/var/lib/libvirt/'
