@@ -1,0 +1,22 @@
+
+---
+- name: create VMs
+  hosts: kvm
+  become: true
+
+  vars_files:
+    - vms.yml
+  tasks:
+    - name: get list of VMs
+      virt:
+        command: "list_vms"
+      register: vms 
+      
+      when: item.key not in vms.list_vms
+      with_dict: "{{ guests }}"
+
+
+    - name: check ip
+      script: ./ip.sh "{{ item.key }}"
+      with_dict: "{{ guests }}"
+     

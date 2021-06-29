@@ -1,20 +1,24 @@
 ---
-vm_location: "/var/lib/libvirt/images"
+
+builder_os: centos-8.2
 root_pass: "password"
 
-guests:
-  vm01:
-    hostname: vm01
-    mem: 2048
-    cpus: 1
-    os_type: rhel8.0
-    file_type: qcow2
-  vm02:
-    hostname: vm02
-    mem: 2048
-    cpus: 1
-    os_type: rhel8.0
-    file_type: qcow2
+os_type: rhel8.0
+#types  ubuntu-20.04, fedora-34
+file_type: qcow2
+network: dados
+# ssh key format user:file:path
+ssh-key: devops:file:~/.ssh/id_rsa.pub 
+vm_location: /var/lib/libvirt/images
+ 
 
-Source_VM_Name: 'centos8'
-New_VM_Location: '/var/lib/libvirt/'
+guests:
+  teste1:
+    mem: 2048
+    cpus: 1
+  teste2:
+    mem: 2048
+    cpus: 1
+
+
+

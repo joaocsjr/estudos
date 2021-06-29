@@ -2,6 +2,7 @@
 - name: create VMs
   hosts: kvm
   become: true
+
   vars_files:
     - vms.yml
 
@@ -14,18 +15,17 @@
     - name: create disk
       command: >
                virt-builder --format qcow2 centos-8.2
-               -o {{ vm_location}}/{{ item.key }}.{{ item.value.file_type }}
+               -o /var/lib/libvirt/images/{{ item.key }}.{{ file_type }}
                --size 30G
                --hostname {{ item.key }}   
                --root-password password:{{ root_pass }} --selinux-relabel
-               --run /home/jcastro/Documents/estudos/kvm/install.sh
-       
-            
-#     name: clone disk
-#     command: >
-#              virt-clone --original {{ item.key }}.{{ item.value.template}} --name 
-       # --run /home/jcastro/Documents/estudos/kvm/install.sh
-#                              
+               --firstboot-command 'useradd devops' 
+               --firstboot-command 'echo 'password' | passwd --stdin devops'
+              # --run /home/jcastro/Documents/estudos/kvm/install.sh
+             #  --ssh-inject /home/jcastro/.ssh/id_rsa.pub
+
+
+               
 
 
 
@@ -42,10 +42,11 @@
       command: >
                 virt-install --import --name {{ item.key }}
                 --memory {{ item.value.mem }} --vcpus {{ item.value.cpus }}
-                --disk {{ vm_location }}/{{ item.key }}.{{ item.value.file_type }}
-                --noautoconsole --os-variant {{ item.value.os_type }}   
+                --disk {{ vm_location }}/{{ item.key }}.{{ file_type }}
+                --noautoconsole --os-variant {{ os_type }}  
+                --network network={{ network }}
                 --graphics vnc  
-                --network dados           
+                    
       when: item.key not in vms.list_vms
       with_dict: "{{ guests }}"
 
@@ -54,3 +55,4 @@
         name: "{{ item.key }}"
         state: running
       with_dict: "{{ guests }}"
+

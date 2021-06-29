@@ -1,0 +1,10 @@
+#!/bin/bash
+sudo virsh net-update dados delete  ip-dhcp-host '<host mac="'$1'" ip="'$2'"/>' --live --config --parent-index 0
+#add-host #2>erros_conversao.txt
+if [ $? -eq 0 ]
+then
+  echo "host removido com sucesso"
+  sudo virsh net-dumpxml  dados | grep host\ mac
+else
+  echo "Houve uma falha ao remover o host"
+fi

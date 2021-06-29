@@ -1,25 +1,26 @@
-[kvm]
-localhost ansible_connection=local 
-
-#kvm	ansible_ssh_host=192.168.0.252
-[all:vars]
-ansible_user = jcastro
-ansible_python_interpreter=/usr/bin/python3
-centos8 ansible_ssh_host=10.0.0.71
-centos8 ansible_ssh_host=10.0.0.71
-centos8 ansible_ssh_host=10.0.0.71
-centos8 ansible_ssh_host=10.0.0.71
-awx-rhel ansible_ssh_host=10.0.0.17
-teste-dhcp ansible_ssh_host=10.0.0.49
-centos8 ansible_ssh_host=10.0.0.71
-awx-rhel ansible_ssh_host=10.0.0.17
-teste-dhcp ansible_ssh_host=10.0.0.49
 centos8 ansible_ssh_host=10.0.0.71
 awx-rhel ansible_ssh_host=10.0.0.17
 teste-dhcp ansible_ssh_host=10.0.0.49
 teste-dhcp2 ansible_ssh_host=10.0.0.97
 centos8 ansible_ssh_host=10.0.0.71
 awx-rhel ansible_ssh_host=10.0.0.17
+teste-dhcp ansible_ssh_host=10.0.0.49
+teste-dhcp2 ansible_ssh_host=10.0.0.97
+teste-dhcp3 ansible_ssh_host=10.0.0.61
 centos8 ansible_ssh_host=10.0.0.71
 awx-rhel ansible_ssh_host=10.0.0.17
+teste-dhcp ansible_ssh_host=10.0.0.49
+teste-dhcp2 ansible_ssh_host=10.0.0.97
+teste-dhcp3 ansible_ssh_host=10.0.0.61
+centos8 ansible_ssh_host=10.0.0.71
+awx-rhel ansible_ssh_host=10.0.0.17
+teste-dhcp ansible_ssh_host=10.0.0.49
+teste-dhcp2 ansible_ssh_host=10.0.0.97
+teste-dhcp3 ansible_ssh_host=10.0.0.61
+centos8 ansible_ssh_host=10.0.0.71
+awx-rhel ansible_ssh_host=10.0.0.17
+teste2 ansible_ssh_host=10.0.0.48
+centos8 ansible_ssh_host=10.0.0.71
+awx-rhel ansible_ssh_host=10.0.0.17
+teste1 ansible_ssh_host=10.0.0.57
 teste2 ansible_ssh_host=10.0.0.26
